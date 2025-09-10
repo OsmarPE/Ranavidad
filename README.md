@@ -1,4 +1,4 @@
-# 🎄 Renavidad - Cuenta Regresiva Navideña
+# 🎄 Ranavidad - Cuenta Regresiva Navideña
 
 Una aplicación web interactiva que muestra una cuenta regresiva hasta la Navidad, con reproductor de video de fondo y notificaciones por correo electrónico.
 
@@ -13,7 +13,7 @@ Una aplicación web interactiva que muestra una cuenta regresiva hasta la Navida
 
 ## 🖥️ Demo
 
-![Renavidad Screenshot](screenshot.png) <!-- Agrega una captura de pantalla aquí -->
+![Ranavidad Screenshot](screenshot.png) <!-- Agrega una captura de pantalla aquí -->
 
 ## 🚀 Instalación y Uso
 
@@ -26,8 +26,8 @@ Una aplicación web interactiva que muestra una cuenta regresiva hasta la Navida
 
 1. Clona este repositorio:
 ```bash
-git clone https://github.com/tuusuario/renavidad.git
-cd renavidad
+git clone https://github.com/tuusuario/ranavidad.git
+cd ranavidad
 ```
 
 2. Abre el archivo `index.html` en tu navegador web favorito, o
@@ -49,7 +49,7 @@ php -S localhost:8000
 ## 📁 Estructura del Proyecto
 
 ```
-renavidad/
+ranavidad/
 ├── index.html          # Página principal
 ├── app.js             # Lógica JavaScript (POO)
 ├── README.md          # Documentación del proyecto
