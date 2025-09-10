@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contador que muestra cuanto falta para ranavidad 2025">
+    <meta name="keywords" content="ranavidad, navidad 2025, contador navidad, cuenta regresiva navidad, cuanto falta navidad, calendario navideño">
+    <meta name="author" content="Osmar Perera">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tudominio.com/ranavidad-contador">
+    <meta property="og:title" content="Ranavidad - Cuenta Regresiva">
+    <meta property="og:description"
+        content="Descubre cuántos días, horas y minutos faltan para la Ranavidad 2025. Contador navideño en tiempo real con notificaciones.">
+    <meta property="og:image" content="https://tudominio.com/images/ranavidad-contador-og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Ranavidad con cuenta regresiva">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:site_name" content="Ranavidad">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://tudominio.com/ranavidad-contador">
+    <meta name="twitter:title" content="Ranavidad - Cuenta Regresiva">
+    <meta name="twitter:description"
+        content="Descubre cuántos días, horas y minutos faltan para la Ranavidad 2025. Contador navideño en tiempo real.">
+    <meta name="twitter:image" content="https://tudominio.com/images/ranavidad-contador-twitter.jpg">
+    <meta name="twitter:image:alt" content="Contador de Ranavidad 2025">
+
+    <link rel="preload" href="css/styles.css" as="style">
+    <link rel="icon" href="/public/favicon.png" as="image">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Renavidad</title>
+</head>
+
+
+<body>
+    <video src="src/video.mp4" class="video" id="video" autoplay loop   aria-hidden="true" alt="Video de fondo navideño para el contador de Ranavidad"></video>
+    <div class="body">
+        <div class="container">
+            <header class="header" role="banner">
+                <nav aria-label="Navegación principal">
+                    <button class="header__btn" id="btn-notification" aria-label="Activar notificaciones de Navidad"
+                        title="Recibe notificaciones cuando llegue la Ranavidad">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-bell-icon lucide-bell" aria-hidden="true">
+                            <path d="M10.268 21a2 2 0 0 0 3.464 0" />
+                            <path
+                                d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" />
+                        </svg>
+                    </button>
+                </nav>
+            </header>
+            <main class="main">
+                <h1 class="main__title">Ranavidad</h1>
+
+                <div class="main__body">
+                    <h2 class="main__subtitle">Cuenta regresiva</h2>
+                    <div class="main__countdown" id="countdown" aria-labelledby="countdown-heading">
+                           <div class="main__box">
+                                <span class="main__number" id="days" aria-label="Días restantes">0</span>
+                                <span class="main__text">Días</span>
+                            </div>
+                            <div class="main__box">
+                                <span class="main__number" id="hours" aria-label="Horas restantes">00</span>
+                                <span class="main__text">Horas</span>
+                            </div>
+                            <div class="main__box">
+                                <span class="main__number" id="minutes" aria-label="Minutos restantes">00</span>
+                                <span class="main__text">Minutos</span>
+                            </div>
+                            <div class="main__box">
+                                <span class="main__number" id="seconds" aria-label="Segundos restantes">00</span>
+                                <span class="main__text">Segundos</span>
+                            </div>
+                    </div>
+                </div>
+            </main>
+            <footer class="footer" role="contentinfo">
+                <span class="footer__text">Sana, sana ya colita de rana....</span>
+                <div class="footer__actions">
+                    <button class="footer__btn btn--secondary" id="btn-sound">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-volume-icon lucide-volume">
+                            <path
+                                d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z" />
+                        </svg>
+                    </button>
+                    <button class="footer__btn btn--primary" id="btn-play">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-play-icon lucide-play">
+                            <path
+                                d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z" />
+                        </svg>
+                    </button>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <div class="modal"  role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+        <div class="modal__body">
+            <div class="modal__form">
+                <h2 class="modal__title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-bell-icon lucide-bell">
+                        <path d="M10.268 21a2 2 0 0 0 3.464 0" />
+                        <path
+                            d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" />
+                    </svg>
+                    Recordatorio de Navidad
+                </h2>
+                <p class="modal__text">Ingresa tu correo electrónico y te enviaremos una notificación especial cuando
+                    llegue la Navidad. ¡No querrás perderte la magia!</p>
+                <form class="form">
+                    <label for="email" class="form__label">Correo electrónico:</label>
+                    <div class="form__input">
+                        <div class="form__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-mail-icon lucide-mail">
+                                <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
+                                <rect x="2" y="4" width="20" height="16" rx="2" />
+                            </svg>
+                        </div>
+                        <input type="email" id="email" class="form__input-item"
+                            placeholder="Ingresa tu correo electrónico">
+                    </div>
+                    <button type="submit" class="form__btn btn--primary">Registrarme</button>
+                </form>
+                <button class="modal__close" id="modal-btn-close">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-x-icon lucide-x">
+                        <path d="M18 6 6 18" />
+                        <path d="m6 6 12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="tsparticles"></div>
+</body>
+<script src="app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2.9.3/tsparticles.bundle.min.js"></script>
+<script defer>
+    tsParticles.load("tsparticles", {
+        particles: {
+            number: { value: 100 },
+            color: { value: "#C8FF7E" },
+            shape: { type: "circle" },
+            opacity: { value: 0.7 },
+            size: { value: 1 },
+            move: {
+                enable: true,
+                direction: "bottom",
+                speed: 1,
+                outModes: {
+                    default: "out"      // 🔹 Cuando salen, reaparecen arriba
+                }
+            },
+
+        }
+    });
+</script>
+
+</html>
