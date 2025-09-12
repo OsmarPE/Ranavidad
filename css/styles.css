@@ -289,7 +289,7 @@ button{
     border-color: var(--color-green-100);
 }
 
-.form__btn{
+.form__btn, .modal__btn{
     padding: .875rem 1.5rem;
     border-radius: 6px;
     font-weight: 600;
@@ -318,4 +318,26 @@ button{
     .main__subtitle{
         font-size: 1.25rem;
     }
+}
+
+.modal__form.hidden{
+    display: none;
+}
+
+.modal__success{
+    display: none;
+    text-align: center;
+}
+
+.modal__title--success{
+    justify-content: center;
+}
+
+.modal__success.active{
+    display: block;
+}
+
+.modal__icon-success {
+    width: 100%;
+    max-width: 260px;
 }

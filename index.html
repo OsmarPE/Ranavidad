@@ -10,11 +10,11 @@
     <meta name="robots" content="index, follow">
 
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://tudominio.com/ranavidad-contador">
+    <meta property="og:url" content="https://ranavidad.netlify.app">
     <meta property="og:title" content="Ranavidad - Cuenta Regresiva">
     <meta property="og:description"
         content="Descubre cuántos días, horas y minutos faltan para la Ranavidad 2025. Contador navideño en tiempo real con notificaciones.">
-    <meta property="og:image" content="https://tudominio.com/images/ranavidad-contador-og.jpg">
+    <meta property="og:image" content="https://ranavidad.netlify.app/public/favicon.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="Ranavidad con cuenta regresiva">
@@ -22,15 +22,15 @@
     <meta property="og:site_name" content="Ranavidad">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://tudominio.com/ranavidad-contador">
+    <meta name="twitter:url" content="https://ranavidad.netlify.app">
     <meta name="twitter:title" content="Ranavidad - Cuenta Regresiva">
     <meta name="twitter:description"
         content="Descubre cuántos días, horas y minutos faltan para la Ranavidad 2025. Contador navideño en tiempo real.">
-    <meta name="twitter:image" content="https://tudominio.com/images/ranavidad-contador-twitter.jpg">
+    <meta name="twitter:image" content="https://ranavidad.netlify.app/public/favicon.jpg">
     <meta name="twitter:image:alt" content="Contador de Ranavidad 2025">
 
     <link rel="preload" href="css/styles.css" as="style">
-    <link rel="icon" href="/public/favicon.png" as="image">
+    <link rel="icon" href="/public/favicon.jpg" as="image">
 
     <link rel="stylesheet" href="css/styles.css">
     <title>Ranavidad</title>
@@ -38,7 +38,7 @@
 
 
 <body>
-    <video src="src/video.mp4" class="video" id="video" autoplay loop   aria-hidden="true" alt="Video de fondo navideño para el contador de Ranavidad"></video>
+    <video src="src/video.mp4" poster="src/poster.jpg" class="video" id="video" preload="auto" autoplay loop   aria-hidden="true" alt="Video de fondo navideño para el contador de Ranavidad"></video>
     <div class="body">
         <div class="container">
             <header class="header" role="banner">
@@ -141,6 +141,15 @@
                         <path d="M18 6 6 18" />
                         <path d="m6 6 12 12" />
                     </svg>
+                </button>
+            </div>
+
+            <div class="modal__success">
+                <img class="modal__icon-success" src="src/success.svg" alt="Éxito">
+                <h2 class="modal__title modal__title--success">¡Te has registrado con éxito!</h2>
+                <p class="modal__text">Te enviaremos una notificación cuando llegue la Renavidad</p>
+                <button class="modal__btn btn--primary" id="modal-btn-close-success">
+                    Aceptar
                 </button>
             </div>
         </div>

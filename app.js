@@ -179,18 +179,24 @@ class Modal {
         this.modal = document.querySelector(modalSelector);
         this.openButton = document.querySelector(openButtonSelector);
         this.closeButton = document.querySelector(closeButtonSelector);
-        
+        this.form = this.modal.querySelector('.form');
+        this.inputEmail = this.form.querySelector('#email');
+        this.modalForm = this.modal.querySelector('.modal__form');
+        this.successMessage = this.modal.querySelector('.modal__success');
+        this.modalCloseSuccessButton = this.successMessage.querySelector('#modal-btn-close-success');
         this.init();
     }
 
     init() {
         this.addEventListeners();
     }
+    
 
     addEventListeners() {
         this.openButton.addEventListener('click', () => this.open());
         this.closeButton.addEventListener('click', () => this.close());
-        
+        this.modalCloseSuccessButton.addEventListener('click', () => this.closeModalSuccess());
+        this.form.addEventListener('submit', this.handleSubmit.bind(this));
         // Cerrar modal al hacer clic fuera del contenido
         this.modal.addEventListener('click', (e) => {
             if (e.target === this.modal) {
@@ -214,8 +220,29 @@ class Modal {
         this.modal.classList.remove('active');
     }
 
+    closeModalSuccess() {
+        this.close();
+        this.modalForm.classList.remove('hidden');
+        this.successMessage.classList.remove('active');
+    }
+
+    showSuccessMessage() {
+        this.modalForm.classList.add('hidden');
+        this.successMessage.classList.add('active');
+    }
+
     isOpen() {
         return this.modal.classList.contains('active');
+    }
+    handleSubmit(event) {
+        event.preventDefault();
+        const email = this.inputEmail.value;
+        if (!email) {
+            alert('Por favor, ingresa un correo electrónico válido.');
+        }
+        this.showSuccessMessage();
+        this.inputEmail.value = '';
+        
     }
 }
 
