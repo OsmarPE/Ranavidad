@@ -98,11 +98,12 @@ class CountdownTimer {
 }
 
 class VideoPlayer {
-    constructor(videoSelector, playButtonSelector, soundButtonSelector, bodySelector) {
+    constructor(videoSelector, playButtonSelector, soundButtonSelector, bodySelector, actionsSelector) {
         this.video = document.querySelector(videoSelector);
         this.playButton = document.querySelector(playButtonSelector);
         this.soundButton = document.querySelector(soundButtonSelector);
         this.body = document.querySelector(bodySelector);
+        this.actions = document.querySelector(actionsSelector);
         this.paused = true; 
         this.video.currentTime = 44;
         this.init();
@@ -151,6 +152,7 @@ class VideoPlayer {
 
     onVideoReady() {
         this.body.style.backdropFilter = 'blur(0px)';
+        this.actions.classList.add('active');
     }
 
     play() {
@@ -184,6 +186,7 @@ class Modal {
         this.modalForm = this.modal.querySelector('.modal__form');
         this.successMessage = this.modal.querySelector('.modal__success');
         this.modalCloseSuccessButton = this.successMessage.querySelector('#modal-btn-close-success');
+        this.message = document.querySelector('#email-message');
         this.init();
     }
 
@@ -218,6 +221,8 @@ class Modal {
 
     close() {
         this.modal.classList.remove('active');
+        this.message.classList.remove('active');
+        this.inputEmail.value = '';
     }
 
     closeModalSuccess() {
@@ -237,11 +242,15 @@ class Modal {
     handleSubmit(event) {
         event.preventDefault();
         const email = this.inputEmail.value;
-        if (!email) {
-            alert('Por favor, ingresa un correo electrónico válido.');
+        const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (!regex.test(email)) {
+            this.message.classList.add('active');
+            return;
         }
-        this.showSuccessMessage();
+        
+        this.message.classList.remove('active');
         this.inputEmail.value = '';
+        this.showSuccessMessage();
         
     }
 }
@@ -260,7 +269,7 @@ class ChristmasApp {
         this.countdown = new CountdownTimer('2025-12-25T00:00:00');
         this.countdown.start();
 
-        this.videoPlayer = new VideoPlayer('#video', '#btn-play', '#btn-sound', '.body');
+        this.videoPlayer = new VideoPlayer('#video', '#btn-play', '#btn-sound', '.body', '.footer__actions');
 
         this.modal = new Modal('.modal', '#btn-notification', '#modal-btn-close');
     }

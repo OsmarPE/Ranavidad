@@ -24,8 +24,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://ranavidad.netlify.app">
     <meta name="twitter:title" content="Ranavidad - Cuenta Regresiva">
-    <meta name="twitter:description"
-        content="Descubre cuántos días, horas y minutos faltan para la Ranavidad 2025. Contador navideño en tiempo real.">
+    <meta name="twitter:description" content="Descubre cuántos días, horas y minutos faltan para la Ranavidad 2025. Contador navideño en tiempo real.">
     <meta name="twitter:image" content="https://ranavidad.netlify.app/public/favicon.jpg">
     <meta name="twitter:image:alt" content="Contador de Ranavidad 2025">
 
@@ -38,7 +37,7 @@
 
 
 <body>
-    <video src="src/video.mp4" poster="src/poster.jpg" class="video" id="video" preload="auto" autoplay loop   aria-hidden="true" alt="Video de fondo navideño para el contador de Ranavidad"></video>
+    <video src="src/video.mp4" poster="src/poster.jpg" class="video" id="video" preload="metadata" autoplay loop   aria-hidden="true" alt="Video de fondo navideño para el contador de Ranavidad"></video>
     <div class="body">
         <div class="container">
             <header class="header" role="banner">
@@ -132,6 +131,7 @@
                         <input type="email" id="email" class="form__input-item"
                             placeholder="Ingresa tu correo electrónico">
                     </div>
+                    <span class="form__message" id="email-message">Ingrese un correo electrónico válido</span>
                     <button type="submit" class="form__btn btn--primary">Registrarme</button>
                 </form>
                 <button class="modal__close" id="modal-btn-close">

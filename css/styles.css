@@ -141,7 +141,16 @@ button{
     display: flex;
     gap: 1rem;
     align-items: center;
+    opacity: .5;
+    transition: all 0.3s ease;
+    pointer-events: none;
 }
+
+.footer__actions.active{
+    opacity: 1;
+    pointer-events: auto;
+}
+
 .footer__btn{
     width: 3.25rem;
     height: 3.25rem;
@@ -279,6 +288,18 @@ button{
     border: 0;
     outline: 0;
     color: var(--color-white-100);
+}
+
+.form__message{
+    display: none;
+    margin-top: .5rem;
+    color: rgb(255, 208, 208);
+    font-size: .75rem;
+    font-weight: 500;
+}
+
+.form__message.active{
+    display: inline-block;   
 }
 
 .form__input-item::placeholder{
